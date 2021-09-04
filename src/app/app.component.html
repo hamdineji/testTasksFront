@@ -1,0 +1,101 @@
+<div class="row">
+<div class="col-sm-5">
+</div>
+<h1 class="col-sm-6" > Front end Application </h1>
+</div>
+<div class="row">
+  <div class="col-sm-10">
+  </div>
+  <div class="col-sm-2">
+    <div > Nom  : Neji </div>
+    <div>Prénom : Hamdi </div>
+    <div>  Tél :  23373927</div>
+  </div>
+<div class="row">
+<div class="col-sm-2">
+
+</div>
+<div class="col-sm-8">
+  <table class="table table-bordered table-hover">
+    <thead style="background-color: #a7c5eb;"> <tr style="text-align: center;">
+         <th>
+             Task Name
+         </th>
+         <th>
+             Assignees
+         </th>
+         <th>
+             Priority 
+         </th>
+         <th>
+             Due Date
+         </th>
+     </tr>
+ </thead>
+ <tbody>
+   <tr>
+     <td class="align-items-center">
+       <div class="row">
+<div class="col-sm-2">
+
+</div>
+<div class="col-sm-8">
+  <input placeholder="Search by name" [(ngModel)]="TaskName" (ngModelChange)="onChangeName($event)" >
+</div>
+       </div>
+       
+     </td>
+     <td class="align-items-center">
+      <div class="row">
+        <div class="col-sm-2">
+        
+        </div>
+        <div class="col-sm-8">
+          <input placeholder="Search by assignees" [(ngModel)]="Assignees" (ngModelChange)="onChangeAssignees($event)" >
+        </div>
+               </div>
+    </td>
+    <td class="align-items-center">
+      <div class="row">
+        <div class="col-sm-2">
+        
+        </div>
+        <div class="col-sm-8">
+          <input placeholder="Search by Priority" [(ngModel)]="Priority" (ngModelChange)="onChangePriority($event)" >
+        </div>
+               </div>
+    </td>
+    <td class="align-items-center">
+      <div class="row">
+        <div class="col-sm-2">
+        
+        </div>
+        <div class="col-sm-8">
+          <input type="date" placeholder="Search by Date" [(ngModel)]="Date" (ngModelChange)="onChangeDate($event)">
+        </div>
+               </div>
+    </td>
+
+   </tr>
+     <tr *ngFor="let task of Tasks" >
+         <td style="text-align: center;">
+          {{task.Task_name}}
+         </td>
+         <td style="text-align: center;">
+             {{task.assigness}}
+         </td >
+         <td style="text-align: center;">
+             {{task.Priority}}
+         </td>
+         <td style="text-align: center;">
+             {{timeConverter(task.Due_date)}}
+         </td>
+     </tr>
+ </tbody>
+ </table>
+</div>
+</div>
+
+</div>
+
+<router-outlet></router-outlet>
